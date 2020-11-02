@@ -15,19 +15,19 @@ has_many :records
 
 ## itemsテーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| name        | string     | null: false                    |
-| explanation | text       | null: false                    |
-| category    | string     | null: false                    |
-| status      | string     | null: false                    |
-| charge      | string     | null: false                    |
-| prefecture  | string     | null: false                    |
-| days        | integer    | null: false                    |
-| price       | integer    | null: false                    |
-| fee         | integer    | null: false                    |
-| profit      | integer    | null: false                               |
-| user_id     | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| name          | string     | null: false                    |
+| explanation   | text       | null: false                    |
+| category_id   | integer    | null: false                    |
+| status_id     | integer    | null: false                    |
+| charge_id     | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| days_id       | integer    | null: false                    |
+| dprice         | integer    | null: false                    |
+| fee           | integer    | null: false                    |
+| profit        | integer    | null: false                    |
+| user_id       | references | null: false, foreign_key: true |
 
 ### Association
 
