@@ -17,7 +17,6 @@ has_many :records
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| image       |            |                                |
 | name        | string     | null: false                    |
 | explanation | text       | null: false                    |
 | category    | string     | null: false                    |
