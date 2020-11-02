@@ -24,7 +24,7 @@ has_many :records
 | charge_id     | integer    | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | days_id       | integer    | null: false                    |
-| dprice         | integer    | null: false                    |
+| price         | integer    | null: false                    |
 | fee           | integer    | null: false                    |
 | profit        | integer    | null: false                    |
 | user_id       | references | null: false, foreign_key: true |
@@ -46,20 +46,20 @@ has_one : record
 
 belongs_to :user
 belongs_to :item
-belongs_to :address
+has_one :address
 
 
-## addresses
+## addressesテーブル
 
-| Column       | Type       | Options     |
-| ------------ | ---------- | ----------- |
-| postal_code  | string     | null: false |
-| prefecture   | string     | null: false |
-| municipality | string     | null: false |
-| address      | string     | null: false |
-| phone_number | string     | null: false |
-| user_id      | references | null: false, foreign_key: true |
-
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| postal_code_id | integer    | null: false                    |
+| prefecture_id  | integer    | null: false                    |
+| municipality   | string     | null: false                    |
+| address        | string     | null: false                    |
+| phone_number   | string     | null: false                    |
+| user_id        | references | null: false, foreign_key: true |
+| record_id      | references | null: false, foreign_key: true |
 
 ### Association
 
