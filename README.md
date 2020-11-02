@@ -25,9 +25,7 @@ has_many :records
 | prefecture_id | integer    | null: false                    |
 | days_id       | integer    | null: false                    |
 | price         | integer    | null: false                    |
-| fee           | integer    | null: false                    |
-| profit        | integer    | null: false                    |
-| user_id       | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -36,10 +34,10 @@ has_one : record
 
 ## recordテーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -53,13 +51,13 @@ has_one :address
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| postal_code_id | integer    | null: false                    |
+| postal_code_id | string     | null: false                    |
 | prefecture_id  | integer    | null: false                    |
 | municipality   | string     | null: false                    |
 | address        | string     | null: false                    |
+| building       | string     |                                |
 | phone_number   | string     | null: false                    |
-| user_id        | references | null: false, foreign_key: true |
-| record_id      | references | null: false, foreign_key: true |
+| record         | references | null: false, foreign_key: true |
 
 ### Association
 
