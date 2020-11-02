@@ -2,11 +2,15 @@
 
 ## usersテーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| nickname | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| nickname           | string  | null: false |
+| email              | string  | null: false |
+| encrypted_password | string  | null: false |
+| first_name         | string  | null: false |
+| last_name          | string  | null: false |
+| kana               | string  | null: false |
+| birthday           | integer | null: false |
 
 ### Association
 
@@ -51,7 +55,7 @@ has_one :address
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| postal_code_id | string     | null: false                    |
+| postal_code_id | integer    | null: false                    |
 | prefecture_id  | integer    | null: false                    |
 | municipality   | string     | null: false                    |
 | address        | string     | null: false                    |
