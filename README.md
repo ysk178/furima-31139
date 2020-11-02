@@ -25,6 +25,8 @@ has_many :records
 | prefecture  | string     | null: false                    |
 | days        | integer    | null: false                    |
 | price       | integer    | null: false                    |
+| fee         | integer    | null: false                    |
+| profit      | integer    | null: false                               |
 | user_id     | references | null: false, foreign_key: true |
 
 ### Association
