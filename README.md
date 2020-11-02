@@ -9,7 +9,8 @@
 | encrypted_password | string  | null: false |
 | first_name         | string  | null: false |
 | last_name          | string  | null: false |
-| kana               | string  | null: false |
+| first_name_kana    | string  | null: false |
+| last_name_kana     | string  | null: false |
 | birthday           | integer | null: false |
 
 ### Association
@@ -53,15 +54,15 @@ has_one :address
 
 ## addressesテーブル
 
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| postal_code_id | integer    | null: false                    |
-| prefecture_id  | integer    | null: false                    |
-| municipality   | string     | null: false                    |
-| address        | string     | null: false                    |
-| building       | string     |                                |
-| phone_number   | string     | null: false                    |
-| record         | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| postal_code   | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| municipality  | string     | null: false                    |
+| address       | string     | null: false                    |
+| building      | string     |                                |
+| phone_number  | string     | null: false                    |
+| record        | references | null: false, foreign_key: true |
 
 ### Association
 
