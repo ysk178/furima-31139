@@ -18,7 +18,7 @@ class Item < ApplicationRecord
     validates :charge_id
     validates :prefecture_id
     validates :days_id
-    validates :price
+    validates :price, format: { with: /\A[-]?[0-9]+(\.[0-9]+)?\z/ }
   end
 
   validates :category_id, numericality: { other_than: 1 }
@@ -26,4 +26,6 @@ class Item < ApplicationRecord
   validates :charge_id, numericality: { other_than: 1 }
   validates :prefecture_id, numericality: { other_than: 1 }
   validates :days_id, numericality: { other_than: 1 }
+
+  validates :price, inclusion: {in: 300..9999999 }
 end
