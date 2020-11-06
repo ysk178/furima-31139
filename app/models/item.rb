@@ -20,7 +20,7 @@ class Item < ApplicationRecord
     validates :days_id
     validates :price, format: { with: /\A-?[0-9]+(\.[0-9]+)?\z/ }
   end
-  
+
   with_options numericality: { other_than: 1 } do
     validates :category_id
     validates :status_id
