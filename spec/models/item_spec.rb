@@ -1,14 +1,19 @@
 require 'rails_helper'
-
 RSpec.describe Item, type: :model do
-  describe '#create' do
     before do
-      @item = FactoryBot.build(:item)
+      @user = FactoryBot.create(:user)
+      @item = FactoryBot.build(:item, user_id: @user.id)
     end
 
     it '全ての項目が存在すれば登録できること' do
       expect(@item).to be_valid
     end
+
+    it '商品画像がないと登録できないこと' do
+      @item.image = nil
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Image can't be blank")
+    end  
 
     it '商品名がない場合は登録できないこと' do
       @item.name = ''
@@ -53,9 +58,9 @@ RSpec.describe Item, type: :model do
     end
 
     it '発送までの日数についての情報がないと登録できないこと' do
-      @item.days_id = ''
+      @item.day_id = ''
       @item.valid?
-      expect(@item.errors.full_messages).to include("Days can't be blank", 'Days is not a number')
+      expect(@item.errors.full_messages).to include("Day can't be blank", 'Day is not a number')
     end
 
     it '価格についての情報が必須であること' do
@@ -81,5 +86,4 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include('Price is not included in the list')
     end
-  end
 end
