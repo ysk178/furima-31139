@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   belongs_to :status
   belongs_to :charge
   belongs_to :prefecture
-  belongs_to :day
+  belongs_to :days
 
   belongs_to :user
   has_one :record
