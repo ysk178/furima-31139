@@ -19,6 +19,7 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :day_id
     validates :price, format: { with: /\A-?[0-9]+(\.[0-9]+)?\z/ }
+    validates :image
   end
 
   with_options numericality: { other_than: 1 } do
